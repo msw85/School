@@ -1,0 +1,37 @@
+package controller;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import database.SaleOrderDB;
+import database.SaleOrderDBIF;
+import model.SaleOrder;
+
+public class SaleOrderController {
+
+	private SaleOrderDBIF sodb;
+	
+	public SaleOrderController() {
+		sodb = new SaleOrderDB();
+	}
+	
+	public List<SaleOrder> findALL() throws SQLException {		
+		return sodb.findAll();		
+	}
+	
+	public SaleOrder findById(int id) throws SQLException {
+		return sodb.findById();
+	}
+	
+	public void createSaleOrder(SaleOrder s) throws SQLException {
+		//sodb.createSaleOrder(s);
+	}
+	
+	public void deleteSaleOrder(SaleOrder s) throws SQLException {
+		//sodb.deleteSaleOrder(s);
+	}
+	
+	public void updateSaleOrder(SaleOrder s) throws SQLException {
+		//sodb.updateSaleOrder(s);
+	}
+}

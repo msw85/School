@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\JAAAM-Blockchain",
+    "\\JAAAM-Blockchain\\DataLogic",
+    "\\JAAAM-Blockchain\\Program",
+    "\\JAAAM-WebClient",
+    "\\JAAAM-WebClient\\JAAAM-WebClient",
+    "\\JAAAM-WebClient\\JAAAM-WebClient\\Controllers",
+    "\\JAAAM-WebClient\\JAAAM-WebClient\\Views",
+    "\\JAAAM-WebClient\\JAAAM-WebClient\\Views\\Event",
+    "\\JAAAM-WebClient\\JAAAM-WebClient\\Views\\Home",
+    "\\JAAAM-WebClient\\JAAAM-WebClient\\Views\\Match"
+  ],
+  "SelectedNode": "\\JAAAM-WebClient\\JAAAM-WebClient\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

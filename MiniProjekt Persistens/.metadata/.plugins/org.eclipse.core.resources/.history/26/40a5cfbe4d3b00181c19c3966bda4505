@@ -1,0 +1,14 @@
+package database;
+
+import java.util.List;
+
+import model.Storage;
+
+public interface StorageDBIF {
+	List<Storage> findAll();
+	Storage findById(int id);
+	void createStorage(Storage s);
+	void deleteStorage(Storage s);
+	void updateStorage(Storage s);
+
+}

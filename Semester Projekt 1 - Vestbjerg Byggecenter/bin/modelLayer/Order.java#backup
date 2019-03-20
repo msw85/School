@@ -1,0 +1,116 @@
+x½package modelLayer;
+
+import modelLayer.Product;
+import java.util.*;
+import java.util.Date;
+/**
+ * Write a description of class Order here.         
+ *
+ * @author (Group 6)
+ * @version (V.1.0)
+ */
+public class Order{
+    private Integer id;
+    private String trackAndTrace;
+    private double weight;
+    private double coli;
+    private Date timePacked;
+    private Date timeReceived;
+    private Date timeSent;
+    private boolean active;
+    private LinkedList<Product> products;
+
+    /**
+     * Constructor for objects of class Order
+     */
+    public Order(String trackAndTrace, double weight, double coli){
+        int sizeArr =  OrderContainer.getInstance().size();
+        setFields(sizeArr++, trackAndTrace, weight, coli);
+        timeReceived = new Date();
+        active = true;
+    }
+
+    public void setFields(Integer id, String trackAndTrace, double weight, double coli){
+        if(this.id == null || id != null)
+        {
+            this.id = id;
+        }
+        if(trackAndTrace != null){
+            this.trackAndTrace = trackAndTrace;
+        }
+        if(weight != 0){
+            this.weight = weight;
+        }
+        if(coli != 0){
+            this.coli = coli;
+        }
+        if(this.timePacked == null || timePacked != null){
+            this.timePacked = timePacked;
+        }
+        if(this.timeReceived == null || timeReceived != null){
+            this.timeReceived = timeReceived;
+        }
+        if(this.timeSent == null || timeSent != null){
+            this.timeSent = timeSent;
+        }
+    }
+
+    public String toString(){
+        String toReturn =  "ID: " + id + " track and trace: " + trackAndTrace + " weight: " + weight + " coli: " + coli;
+        if(timeReceived != null)
+            toReturn = toReturn +  " timeReceived: " + timeReceived.toString();
+        if(timeSent != null)
+            toReturn = toReturn +   " time sent: "  + timeSent.toString();
+        if(timePacked != null)
+            toReturn = toReturn + " timePacked: " + timePacked.toString();
+        return toReturn;
+    }
+
+    public String getTrackAndTrace(){
+        return trackAndTrace;
+    }
+
+    public double getWeight(){
+        return weight;
+    }
+
+    public double getColi(){
+        return coli;
+    }
+
+    public Date getTimePacked(){
+        return timePacked;
+    }
+
+    public Date gettimeReceived(){
+        return timeReceived;
+    }
+
+    public Date getTimeSent(){
+        return timeSent;
+    }
+
+    public double getPrice(){
+        double sum = 0d;
+        if(!products.isEmpty())
+        {
+            for(Product p : products){
+                sum = sum + p.getPrice();
+            }
+        }
+        return sum;
+    }
+    
+    public void addProduct(Product p){
+        products.add(p);
+    }
+
+    public void toggleActive() {
+        if(active) {
+            active = false;
+        } else {
+            active = true;
+        }
+    }
+}
+

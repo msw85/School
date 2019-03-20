@@ -1,0 +1,23 @@
+package model;
+
+public class Storage {
+
+	private String Location;
+
+	public Storage(String location) {
+		super();
+		Location = location;
+	}
+	
+	public String getLocation() {
+		return Location;
+	}
+
+	public void setLocation(String location) {
+		Location = location;
+	}
+
+	
+	
+	
+}

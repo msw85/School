@@ -1,0 +1,74 @@
+package model;
+
+public class Product {
+	private String name;
+	private double purchaseDate;
+	private double rentPrice;
+	private String countryOfOrigin;
+	private Integer minStock;
+	private String storageLocation;
+	private String supplier;
+	private String barcode;
+	
+	public Product(String name, double purchaseDate, double rentPrice, String countryOfOrigin, Integer minStock,
+			String storageLocation, String supplier, String barcode) {
+		super();
+		this.name = name;
+		this.purchaseDate = purchaseDate;
+		this.rentPrice = rentPrice;
+		this.countryOfOrigin = countryOfOrigin;
+		this.minStock = minStock;
+		this.storageLocation = storageLocation;
+		this.supplier = supplier;
+		this.barcode = barcode;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public double getPurchaseDate() {
+		return purchaseDate;
+	}
+	public void setPurchaseDate(double purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
+	public double getRentPrice() {
+		return rentPrice;
+	}
+	public void setRentPrice(double rentPrice) {
+		this.rentPrice = rentPrice;
+	}
+	public String getCountryOfOrigin() {
+		return countryOfOrigin;
+	}
+	public void setCountryOfOrigin(String countryOfOrigin) {
+		this.countryOfOrigin = countryOfOrigin;
+	}
+	public Integer getMinStock() {
+		return minStock;
+	}
+	public void setMinStock(Integer minStock) {
+		this.minStock = minStock;
+	}
+	public String getStorageLocation() {
+		return storageLocation;
+	}
+	public void setStorageLocation(String storageLocation) {
+		this.storageLocation = storageLocation;
+	}
+	public String getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+	public String getBarcode() {
+		return barcode;
+	}
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
+	}
+	
+}

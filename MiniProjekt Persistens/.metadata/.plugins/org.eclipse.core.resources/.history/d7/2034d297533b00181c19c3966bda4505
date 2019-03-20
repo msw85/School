@@ -1,0 +1,101 @@
+package database;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import database.DBConnection;
+import model.Country;
+import model.Supplier;
+
+public class SupplierDB implements SupplierDBIF {
+	//TODO
+	//	Join in the SQL script to get country instead of country id
+	//	Implement createSupplier, updateSupplier, deleteSupplier
+	
+	private static final String FIND_ALLQ = "select id, name, address, cid, phone_no, email from suppliers";
+	private static final String FIND_SUP_BY_IDQ = "select id, name, address, cid, phone_no, email from suppliers where id=?";
+	private static final String CREATE_SUPQ = "insert into suppliers(name, address, cid, phone_no, email) values( ?, ?, (select id from countries where name = ?), ?, ?) ";
+	private static final String UPDATE_SUPQ = "update suppliers set name = ?, address = ?, cid = ?, phone_no = ?, mail = ? from suppliers where id = ?";
+	private static final String DELETE_SUPQ = "delete from suppliers where id = ?";
+	
+	private PreparedStatement findAll;
+	private PreparedStatement findSupById;
+	private PreparedStatement createSup;
+	private PreparedStatement updateSup;
+	private PreparedStatement deleteSup;
+	
+	public SupplierDB() throws SQLException {
+		findAll = DBConnection.getInstance().getConnection().prepareStatement(FIND_ALLQ);
+		findSupById = DBConnection.getInstance().getConnection().prepareStatement(FIND_SUP_BY_IDQ);
+		createSup = DBConnection.getInstance().getConnection().prepareStatement(CREATE_SUPQ);
+		updateSup = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_SUPQ);
+		deleteSup = DBConnection.getInstance().getConnection().prepareStatement(DELETE_SUPQ);
+	}
+	
+	
+	@Override
+	public List<Supplier> findAll() throws SQLException {
+		ResultSet rs;
+		rs = findAll.executeQuery();
+		List<Supplier> allSupp = buildObjects(rs);
+		return allSupp;			
+	}
+
+	@Override
+	public Supplier findById(int id) throws SQLException {
+		Supplier supp = null;
+		ResultSet rs;
+		findSupById.setInt(1, id);
+		rs = findSupById.executeQuery();
+		supp = buildObject(rs);
+		return supp;		
+	}
+
+	@Override
+	public void createSupplier(Supplier s) throws SQLException {
+		createSup.setString(1, s.getName());
+		createSup.setString(2, s.getAddress());
+		createSup.setString(3, s.getCountry());
+		createSup.setString(4, s.getPhoneno());
+		createSup.setString(5, s.getEmail());
+		createSup.execute();
+		// TODO Auto-generated method stub		
+	}
+
+	@Override
+	public void deleteSupplier(Supplier s) throws SQLException {
+		deleteSup.setInt(1, s.getId());
+		deleteSup.executeQuery();
+	}
+
+	@Override
+	public void updateSupplier(Supplier s) throws SQLException {
+		// TODO Auto-generated method stub		
+			updateSup.setString(1, s.getName());
+			updateSup.setString(2, s.getAddress());
+			updateSup.setString(3, s.getCountry());
+			updateSup.setString(4, s.getPhoneno());
+			updateSup.setString(5, s.getEmail());
+			updateSup.setInt(6, s.getId());
+			updateSup.executeUpdate();		
+	}
+	
+	private Supplier buildObject(ResultSet rs) throws SQLException {
+		// Make Supplier from RS using constructor!
+		//Country c = new Country(rs.getInt("cid"));
+		Supplier supp = new Supplier(rs.getInt("id"), rs.getString("name"), rs.getString("address"), rs.getString("cid"), rs.getString("phone_no"), rs.getString("email"));
+		return supp;
+	}
+	
+	private List<Supplier> buildObjects(ResultSet rs) throws SQLException {
+		List<Supplier> result = new ArrayList<>();
+		while(rs.next()) {
+			result.add(buildObject(rs));
+		}
+		return result;
+	}
+
+}

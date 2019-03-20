@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+C:\Users\Aske\Documents\MiniProjektPersistens\.metadata\.plugins\org.eclipse.jdt.core
+2382779621.index

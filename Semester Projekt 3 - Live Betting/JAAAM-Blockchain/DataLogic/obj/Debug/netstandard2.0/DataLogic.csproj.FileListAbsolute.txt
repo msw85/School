@@ -1,0 +1,15 @@
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\DataLogic.deps.json
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\DataLogic.dll
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\DataLogic.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\Model.dll
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\Program.exe
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\Program.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\Program.exe.config
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\bin\Debug\netstandard2.0\Model.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.csprojAssemblyReference.cache
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.csproj.CoreCompileInputs.cache
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.AssemblyInfoInputs.cache
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.AssemblyInfo.cs
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.csproj.CopyComplete
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.dll
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic\obj\Debug\netstandard2.0\DataLogic.pdb

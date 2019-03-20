@@ -1,0 +1,86 @@
+package database;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import model.Customer;
+import model.SaleOrder;
+import model.Storage;
+
+public class SaleOrderDB implements SaleOrderDBIF {
+	
+	private static final String FIND_ALL_Q = "select id, location from saleorders";
+	private static final String FIND_SALE_O_BY_ID_Q = "select id, location from saleorders where id=?";
+	private static final String CREATE_SALE_O_Q = "insert into saleorders(location) values(?) ";
+	private static final String UPDATE_SALE_O_Q = "update storages set location = ? from saleorders where id = ?";
+	private static final String DELETE_SALE_O_Q = "delete from saleorders where id = ?";
+	
+	private PreparedStatement findAll;
+	private PreparedStatement findSaleOById;
+	private PreparedStatement createSaleO;
+	private PreparedStatement updateSaleO;
+	private PreparedStatement deleteSaleO;
+	
+	public SaleOrderDB() throws SQLException {
+		findAll = DBConnection.getInstance().getConnection().prepareStatement(FIND_ALL_Q);
+		findSaleOById = DBConnection.getInstance().getConnection().prepareStatement(FIND_SALE_O_BY_ID_Q);
+		createSaleO = DBConnection.getInstance().getConnection().prepareStatement(CREATE_SALE_O_Q);
+		updateSaleO = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_SALE_O_Q);
+		deleteSaleO = DBConnection.getInstance().getConnection().prepareStatement(DELETE_SALE_O_Q);
+	}
+
+	@Override
+	public List<SaleOrder> findAll() throws SQLException {
+		ResultSet rs;
+		rs = findAll.executeQuery();
+		List<SaleOrder> allSaleOs = buildObjects(rs);
+		return allSaleOs;	
+	}
+
+	@Override
+	public SaleOrder findById(int id) {
+		SaleOrder saleO = null;
+		ResultSet rs;
+		findSaleOById.setInt(1, id);
+		rs = findSaleOById.executeQuery();
+		saleO = buildObject(rs);
+		return saleO;
+	}
+
+	@Override
+	public void createOrder(SaleOrder s) {
+		
+	}
+
+	@Override
+	public void deleteOrder(SaleOrder s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateOrder(SaleOrder s) {
+		// TODO Auto-generated method stub
+		
+	}
+	private SaleOrder buildObject(ResultSet rs) throws SQLException {
+		//TODO: Create customer object
+		//Integer id, Date date, Integer amount, boolean deliveryStatus, Date deliveryDate, Customer cust
+		SaleOrder saleO = new SaleOrder(rs.getInt("id"), rs.getDate("date"), rs.getInt("ammount"), rs.getBoolean("deliveryStatus"),
+				rs.getDate("deliveryDate"), null);
+		return saleO;
+	}
+	
+	private List<SaleOrder> buildObjects(ResultSet rs) throws SQLException{
+		List<SaleOrder> saleOs = new ArrayList<>();
+		while(rs.next()) {
+			saleOs.add(buildObject(rs));
+		}
+		return saleOs;
+	}
+
+}

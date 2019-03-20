@@ -1,0 +1,71 @@
+package database;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import model.Storage;
+import model.Supplier;
+
+public class StorageDB implements StorageDBIF {
+
+	private static final String FIND_ALLQ = "select id, location from storages";
+	private static final String FIND_SUP_BY_IDQ = "select id, location from storages where id=?";
+	private static final String CREATE_SUPQ = "insert into storages(id, location) values(?, ?) ";
+	private static final String UPDATE_SUPQ = "update storages set id = ?, location = ? from storages where id = ?";
+	private static final String DELETE_SUPQ = "delete from storages where id = ?";
+	
+	private PreparedStatement findAll;
+	private PreparedStatement findSupById;
+	private PreparedStatement createSup;
+	private PreparedStatement updateSup;
+	private PreparedStatement deleteSup;
+	
+	public StorageDB() throws SQLException{
+		findAll = DBConnection.getInstance().getConnection().prepareStatement(FIND_ALLQ);
+		findSupById = DBConnection.getInstance().getConnection().prepareStatement(FIND_SUP_BY_IDQ);
+		createSup = DBConnection.getInstance().getConnection().prepareStatement(CREATE_SUPQ);
+		updateSup = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_SUPQ);
+		deleteSup = DBConnection.getInstance().getConnection().prepareStatement(DELETE_SUPQ);
+	}
+	@Override
+	public List<Storage> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Storage findById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	private Storage buildObject(ResultSet rs) throws SQLException {
+		Storage stor = new Storage(rs.getInt("id"), rs.getString("location"));
+		return stor;
+	}
+	
+	private List<Storage> buildObjects(){
+		
+	}
+
+
+
+}

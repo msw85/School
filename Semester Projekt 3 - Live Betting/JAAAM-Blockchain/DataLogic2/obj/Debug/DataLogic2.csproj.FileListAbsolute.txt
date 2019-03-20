@@ -1,0 +1,13 @@
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\DataLogic2.exe.config
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\DataLogic2.exe
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\DataLogic2.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\Model.dll
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\Program.exe
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\Program.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\Program.exe.config
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\bin\Debug\Model.pdb
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\obj\Debug\DataLogic2.csprojAssemblyReference.cache
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\obj\Debug\DataLogic2.csproj.CoreCompileInputs.cache
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\obj\Debug\DataLogic2.csproj.CopyComplete
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\obj\Debug\DataLogic2.exe
+D:\Programming\Visual Studio\Skole\JAAAM\JAAAM-Blockchain\DataLogic2\obj\Debug\DataLogic2.pdb

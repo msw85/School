@@ -1,0 +1,39 @@
+package database;
+
+import java.util.List;
+import model.Storage;
+
+public class StorageDB implements StorageDBIF {
+
+	@Override
+	public List<Storage> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Storage findById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateOrder(Storage s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+}

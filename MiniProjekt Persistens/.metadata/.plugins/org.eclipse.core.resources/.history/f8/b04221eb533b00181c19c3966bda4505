@@ -1,0 +1,39 @@
+package database;
+
+import java.util.List;
+
+import model.SaleOrder;
+
+public class SaleOrderDB implements SaleOrderDBIF {
+
+	@Override
+	public List<SaleOrder> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SaleOrder findById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void createOrder(SaleOrder s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteOrder(SaleOrder s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateOrder(SaleOrder s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

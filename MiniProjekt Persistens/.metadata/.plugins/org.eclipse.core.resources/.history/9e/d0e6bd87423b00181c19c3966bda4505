@@ -1,0 +1,81 @@
+package database;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import model.Storage;
+import model.Storplier;
+
+public class StorageDB implements StorageDBIF {
+
+	private static final String FIND_ALL_Q = "select id, location from storages";
+	private static final String FIND_STOR_BY_ID_Q = "select id, location from storages where id=?";
+	private static final String CREATE_STOR_Q = "insert into storages(location) values(?) ";
+	private static final String UPDATE_STOR_Q = "update storages set location = ? from storages where id = ?";
+	private static final String DELETE_STOR_Q = "delete from storages where id = ?";
+	
+	private PreparedStatement findAll;
+	private PreparedStatement findStorById;
+	private PreparedStatement createStor;
+	private PreparedStatement updateStor;
+	private PreparedStatement deleteStor;
+	
+	public StorageDB() throws SQLException{
+		findAll = DBConnection.getInstance().getConnection().prepareStatement(FIND_ALL_Q);
+		findStorById = DBConnection.getInstance().getConnection().prepareStatement(FIND_STOR_BY_ID_Q);
+		createStor = DBConnection.getInstance().getConnection().prepareStatement(CREATE_STOR_Q);
+		updateStor = DBConnection.getInstance().getConnection().prepareStatement(UPDATE_STOR_Q);
+		deleteStor = DBConnection.getInstance().getConnection().prepareStatement(DELETE_STOR_Q);
+	}
+	@Override
+	public List<Storage> findAll() {
+		ResultSet rs;
+		rs = findAll.executeQuery();
+		List<Storage> allStor = buildObjects(rs);
+		return allStor;	
+	}
+
+	@Override
+	public void createStorage(Storage s){
+		createStor.setString(1, s.getLocation());
+		createStor.execute();
+	}
+
+	@Override
+	public void deleteStorage(Storage s) {
+		deleteStor.setInt(1, s.getId());
+		deleteStor.execute();
+	}
+
+	@Override
+	public void updateStorage(Storage s) {
+		updateStor.setString(1, s.getLocation());
+		updateStor.setInt(2, s.getId());
+		updateStor.execute();
+	}
+
+	@Override
+	public Storage findById(int id) {
+		Storage stor = null;
+		ResultSet rs;
+		findStorById.setInt(1, id);
+		rs = findStorById.executeQuery();
+		stor = buildObject(rs);
+		return stor;
+	}
+	
+	private Storage buildObject(ResultSet rs) throws SQLException {
+		Storage stor = new Storage(rs.getInt("id"), rs.getString("location"));
+		return stor;
+	}
+	
+	private List<Storage> buildObjects(ResultSet rs){
+		List<Storage> stors = new ArrayList<>();
+		while(rs.next()) {
+			stors.add(buildObject(rs));
+		}
+		return stors;
+	}
+}
