@@ -12,11 +12,11 @@ public class DBConnection {
 	private static DBConnection dbConnection;
 	
 	private static final String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	private static final String dbName = "dmaa0917_1067407";
-	private static final String serverAddress = "kraka.ucn.dk";
+	private static final String dbName = "stuff";
+	private static final String serverAddress = "stuff";
 	private static final int    serverPort = 1433;
-	private static final String userName = "dmaa0917_1067407";
-	private static final String password = "Password1!";
+	private static final String userName = "stuff";
+	private static final String password = "stuff";
 	
 	private DBConnection() {
 		String connectionString = String.format("jdbc:sqlserver://%s:%d;databaseName=%s;user=%s;password=%s", 
