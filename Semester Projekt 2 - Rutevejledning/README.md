@@ -1,2 +1,2 @@
 # Projekt2Graph
-Project 2 on UCN 
+2. Semester projekt, UCN
