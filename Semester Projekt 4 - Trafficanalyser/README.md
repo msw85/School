@@ -12,3 +12,5 @@ samt etablere en større tillid fra borgerne til politiets kontroller.\
 Er der brug for øget traﬁkkontrol på de danske veje?\
 Har typen af køretøj betydning for overholdelse afhastighed og sikkerhedsafstand?\
 Har tidspunktet på dagen betydning for overholdelse af hastighed og sikkerhedsafstand?\
+\
+Lavet i Python3
