@@ -1,0 +1,4 @@
+###### Requirements for Google Image Scraper ######
+######    pip3 install -r Requirements.txt   ######
+beautifulsoup4
+selenium
